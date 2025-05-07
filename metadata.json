@@ -1,12 +1,12 @@
 {
-  "name": "securden-securden",
-  "version": "1.0.0",
-  "author": "Securden",
-  "summary": "Leverage the Puppet development environment for seamless access to passwords, secrets, certificates, and keys stored in Securden.",
+  "name": "abiraj-abi",
+  "version": "1.0.4",
+  "author": "Abi",
+  "summary": "Leverage the Puppet development environment for seamless access to passwords, secrets, certificates, and keys stored in Abi.",
   "license": "Apache-2.0",
-  "source": "https://github.com/SecurdenDevOps/puppet",
-  "project_page": "https://github.com/SecurdenDevOps/puppet", 
-  "issues_url": "https://github.com/SecurdenDevOps/puppet/issues",
+  "source": "https://github.com/abishekvp/puppet",
+  "project_page": "https://github.com/abishekvp/puppet", 
+  "issues_url": "https://github.com/abishekvp/puppet/issues",
   "dependencies": [
 
   ],

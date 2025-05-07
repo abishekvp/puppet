@@ -1,10 +1,10 @@
-function securden::add_account(
+function abi::add_account(
   Optional[Hash] $params = {}
 ) {
-  $server_url  = $securden::conf::server_url
-  $authtoken   = $securden::conf::authtoken
-  $org         = $securden::conf::org
-  $certificate = $securden::conf::certificate
+  $server_url  = $abi::conf::server_url
+  $authtoken   = $abi::conf::authtoken
+  $org         = $abi::conf::org
+  $certificate = $abi::conf::certificate
 
   $account_title = $params['account_title']
   $account_type = $params['account_type']

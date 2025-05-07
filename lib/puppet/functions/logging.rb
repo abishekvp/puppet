@@ -3,7 +3,7 @@
 @private
 class Logger
   def self.log(level, message)
-    message = "[SECURDEN] #{message}"
+    message = "[ABI] #{message}"
     case level
     when 'debug'
       Puppet.debug(message)

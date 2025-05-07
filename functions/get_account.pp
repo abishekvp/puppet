@@ -1,4 +1,4 @@
-function securden::get_account(
+function abi::get_account(
   Optional[Hash] $params = {}
 ) {
   $account_id    = $params['account_id']    ? { undef => undef, default => $params['account_id'] }
@@ -8,10 +8,10 @@ function securden::get_account(
   $ticket_id  = $params['ticket_id']  ? { undef => undef, default => $params['ticket_id'] }
   $reason  = $params['reason']  ? { undef => undef, default => $params['reason'] }
 
-  $server_url  = $securden::conf::server_url
-  $authtoken   = $securden::conf::authtoken
-  $org         = $securden::conf::org
-  $certificate = $securden::conf::certificate
+  $server_url  = $abi::conf::server_url
+  $authtoken   = $abi::conf::authtoken
+  $org         = $abi::conf::org
+  $certificate = $abi::conf::certificate
 
   $account_data = get_account(
     $server_url,

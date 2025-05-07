@@ -1,4 +1,4 @@
-class securden::conf (
+class abi::conf (
   String $server_url,
   String $authtoken,
   Optional[String] $org = undef,

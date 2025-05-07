@@ -1,10 +1,10 @@
-class securden (
+class abi (
   String $server_url,
   String $authtoken,
   Optional[String] $org = undef,
   Optional[String] $certificate = undef,
 ) {
-  class { 'securden::conf':
+  class { 'abi::conf':
     server_url  => $server_url,
     authtoken   => $authtoken,
     org         => $org,

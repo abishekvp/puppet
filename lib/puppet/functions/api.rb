@@ -32,7 +32,7 @@ module API
   class Init
     def initialize(server_url:, authtoken:, org: nil, certificate: nil)
       if server_url.nil? || authtoken.nil? || server_url.strip.empty? || authtoken.strip.empty?
-        Logger.log(ERROR, 'Server URL and authtoken are required to initialize Securden')
+        Logger.log(ERROR, 'Server URL and authtoken are required to initialize Abi')
         return nil
       end
       unless server_url.start_with?('http://', 'https://')
@@ -43,7 +43,7 @@ module API
       API.authtoken = authtoken.strip
       API.org = org unless org.to_s.strip.empty? || org.nil?
       API.certificate = certificate
-      Logger.log(INFO, 'Securden initialized successfully')
+      Logger.log(INFO, 'Abi initialized successfully')
     end
 
     def self.initialized
@@ -60,7 +60,7 @@ module API
       unless API.server_url && API.authtoken
         if server_url.nil? || authtoken.nil?
           Logger.log(ERROR,
-                     'Securden is not initialized. Server URL and authtoken are required to initialize Securden')
+                     'Abi is not initialized. Server URL and authtoken are required to initialize Abi')
           return nil
         else
           Init.new(server_url: server_url, authtoken: authtoken, org: org, certificate: certificate)
@@ -99,7 +99,7 @@ module API
         Logger.log(ERROR, 'Required Account title')
         return nil
       end
-      Logger.log(DEBUG, 'Creating account in securden')
+      Logger.log(DEBUG, 'Creating account in abi')
       params = {}
       params['account_title'] = account_title
       params['account_type'] = account_type
@@ -132,7 +132,7 @@ module API
         Logger.log(ERROR, 'Required account ID and Account type')
         return nil
       end
-      Logger.log(DEBUG, 'Updating account in securden')
+      Logger.log(DEBUG, 'Updating account in abi')
       params = {}
       params['account_id'] = account_id
       params['account_type'] = account_type
@@ -164,7 +164,7 @@ module API
 
   class Accounts
     def self.get(account_ids: [], accounts: [])
-      Logger.log(DEBUG, 'Fetching accounts from securden')
+      Logger.log(DEBUG, 'Fetching accounts from abi')
       server = Init.initialized
       return nil if server == false
 
@@ -177,7 +177,7 @@ module API
         Logger.log(ERROR, 'Account IDs or accounts data required')
         return nil
       end
-      Logger.log(DEBUG, 'Fetching accounts from Securden')
+      Logger.log(DEBUG, 'Fetching accounts from Abi')
       accounts_data = Request.new.raise_request(params, '/secretsmanagement/get_accounts', POST)
       return nil unless accounts_data
 
@@ -189,7 +189,7 @@ module API
     end
 
     def self.delete(reason:, account_ids: [], delete_permanently: nil)
-      Logger.log(DEBUG, 'Deleting accounts from securden')
+      Logger.log(DEBUG, 'Deleting accounts from abi')
       server = Init.initialized
       return nil if server == false
 
@@ -197,7 +197,7 @@ module API
         Logger.log(ERROR, 'Required account IDs')
         return nil
       end
-      Logger.log(DEBUG, 'Deleting accounts from securden')
+      Logger.log(DEBUG, 'Deleting accounts from abi')
       params = {}
       params['account_ids'] = account_ids
       params['reason'] = reason unless reason.nil?
@@ -218,7 +218,7 @@ module API
 
   class Request
     def raise_request(payload, request_path, method)
-      Logger.log(DEBUG, 'Raising API request to Securden server.')
+      Logger.log(DEBUG, 'Raising API request to Abi server.')
       uri = URI(API.server_url + request_path)
       uri.query = URI.encode_www_form(payload) if method == GET && !payload.empty?
       http = set_http(uri)

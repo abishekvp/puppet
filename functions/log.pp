@@ -1,4 +1,4 @@
-function securden::log (
+function abi::log (
   String $level,
   String $message,
 ) {

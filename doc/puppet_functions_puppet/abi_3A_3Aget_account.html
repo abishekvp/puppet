@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Puppet Function: securden::get_account (Puppet Language)
+  Puppet Function: abi::get_account (Puppet Language)
   
     &mdash; Documentation by YARD 0.9.36
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "puppet_functions_puppet::securden::get_account";
+  pathId = "puppet_functions_puppet::abi::get_account";
   relpath = '../';
 </script>
 
@@ -39,7 +39,7 @@
     <a href="../_index.html">Index (s)</a> &raquo;
     <span class='title'><span class='object_link'>Puppet Functions</span></span>
      &raquo; 
-    <span class="title">securden::get_account</span>
+    <span class="title">abi::get_account</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Puppet Function: securden::get_account</h1>
+      <div id="content"><h1>Puppet Function: abi::get_account</h1>
 <div class="box_info">
   <dl>
     <dt>Defined in:</dt>
@@ -79,7 +79,7 @@
   <div class="tags overload overload_item">
     <span class="overload">
       <span class="overload_item">
-        <span class="signature first" style="margin-left: 0px;"><strong>securden::get_account(Optional[Hash] $params = {})</strong> &#x21d2; <tt>Any</tt> </span>
+        <span class="signature first" style="margin-left: 0px;"><strong>abi::get_account(Optional[Hash] $params = {})</strong> &#x21d2; <tt>Any</tt> </span>
       </span>
     </span>
   </div>
@@ -167,7 +167,7 @@
       <td>
         <pre class="code"><span class="info file"># File 'functions/get_account.pp', line 1</span>
 
-function securden::get_account(
+function abi::get_account(
   Optional[Hash] $params = {}
 ) {
   $account_id    = $params[&#39;account_id&#39;]    ? { undef =&gt; undef, default =&gt; $params[&#39;account_id&#39;] }
@@ -177,10 +177,10 @@ function securden::get_account(
   $ticket_id  = $params[&#39;ticket_id&#39;]  ? { undef =&gt; undef, default =&gt; $params[&#39;ticket_id&#39;] }
   $reason  = $params[&#39;reason&#39;]  ? { undef =&gt; undef, default =&gt; $params[&#39;reason&#39;] }
 
-  $server_url  = $securden::conf::server_url
-  $authtoken   = $securden::conf::authtoken
-  $org         = $securden::conf::org
-  $certificate = $securden::conf::certificate
+  $server_url  = $abi::conf::server_url
+  $authtoken   = $abi::conf::authtoken
+  $org         = $abi::conf::org
+  $certificate = $abi::conf::certificate
 
   $account_data = get_account(
     $server_url,

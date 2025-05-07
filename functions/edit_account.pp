@@ -1,10 +1,10 @@
-function securden::edit_account(
+function abi::edit_account(
   Optional[Hash] $params = {}
 ) {
-  $server_url  = $securden::conf::server_url
-  $authtoken   = $securden::conf::authtoken
-  $org         = $securden::conf::org
-  $certificate = $securden::conf::certificate
+  $server_url  = $abi::conf::server_url
+  $authtoken   = $abi::conf::authtoken
+  $org         = $abi::conf::org
+  $certificate = $abi::conf::certificate
 
   $account_id = $params['account_id']
   $account_type = $params['account_type']
