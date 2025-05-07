@@ -1,0 +1,6 @@
+--markup markdown
+--readme README.md
+--output-dir doc
+lib/**/*.rb
+--exclude lib/puppet/functions/logging.rb
+--exclude lib/puppet/functions/api.rb
